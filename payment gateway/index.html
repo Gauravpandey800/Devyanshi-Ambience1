@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payement</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background: linear-gradient(90deg, #dbd4cb, #e6e6e6);
+    }
+
+    body {
+      text-align: center;
+      padding: 30px;
+      
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 35px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .payment-box {
+      color: #000000;
+      padding: 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      margin: 15px 0;
+      font-size: 25px;
+    }
+
+    .qr-section {
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .qr-section img {
+      width: 22vw;
+      border-radius: 12px;
+      border: 4px solid #6e653f;
+      transition: 0.3s;
+    }
+
+    .qr-section img:hover {
+      transform: scale(1.05);
+    }
+
+    #showButton {
+      display: inline-block;
+      padding: 12px 25px;
+      font-size: 18px;
+      background: #ffe2b6;
+      color: #000000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: 0.3s;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #showButton:hover {
+      transform: scale(1.05);
+    }
+
+    /* Popup container styling */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    h1,
+    h2,
+    p {
+      margin: 10px;
+    }
+
+    #showButton {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 2px solid #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>QR Payment Gateway</h1>
+  <p>Secure & Instant Payment via UPI QR Code</p>
+
+  <div class="payment-box">
+    💳 <strong>Design Payment:</strong> 50% Advance then 50% after
+    approval
+  </div>
+  <div class="payment-box">
+    ⚡ <strong>Execution Payment:</strong> 25% Advance | 25% 2nd
+    Installment | 25% 3rd Installment | 25% at Completion
+  </div>
+  </div>
+
+  <h2>Click the Button to Make Payment</h2>
+  <button id="showButton">Make Payment</button>
+
+  <!-- Popup container -->
+  <div class="popup-overlay" id="popup">
+    <img src="Payment.jpg" alt="Popup Image">
+  </div>
+
+  <script>
+    const showButton = document.getElementById('showButton');
+    const popup = document.getElementById('popup');
+
+    showButton.addEventListener('click', () => {
+      popup.style.display = 'flex';
+    });
+
+    popup.addEventListener('click', (event) => {
+      if (event.target === popup) {
+        popup.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+
+</html>
